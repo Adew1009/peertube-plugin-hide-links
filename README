@@ -1,0 +1,9 @@
+# PeerTube Plugin: Hide Links for Users with Zero Quota
+
+This plugin hides the "Channels" and "Videos" links from the left navigation menu for users who have zero upload quota.
+
+## Installation
+
+1. Compress the plugin directory into a `.tar.gz` file:
+   ```bash
+   tar -czvf peertube-plugin-hide-links.tar.gz .

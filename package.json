@@ -1,0 +1,14 @@
+{
+  "name": "peertube-plugin-hide-links",
+  "version": "1.0.0",
+  "description": "Hide Channels and Videos links for users with zero quota using filter hook",
+  "author": "Your Name",
+  "license": "AGPL-3.0-or-later",
+  "main": "index.js",
+  "peertube": {
+    "version": ">=4.0.0",
+    "hooks": {
+      "client:filter": "client.js"
+    }
+  }
+}
