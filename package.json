@@ -12,7 +12,7 @@
   },
   "clientScripts": [
     {
-      "script": "client/dist/common-client-plugin.js",
+      "script": "client/common-client-plugin.js",
       "scopes": ["common"]
     }
   ],
