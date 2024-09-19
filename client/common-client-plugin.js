@@ -31,4 +31,4 @@ async function register ({ registerHook, peertubeHelpers }) {
   });
 }
 
-export { register };
+// No export statement needed
