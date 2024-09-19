@@ -1,14 +1,20 @@
 {
   "name": "peertube-plugin-hide-links",
   "version": "1.0.0",
-  "description": "Hide Channels and Videos links for users with zero quota using filter hook",
-  "author": "Michael F Canzoneri",
-  "license": "AGPL-3.0-or-later",
-  "main": "index.js",
-  "peertube": {
-    "version": ">=4.0.0",
-    "hooks": {
-      "client:filter": "client/hooks.js"
+  "description": "Hide 'Channels' and 'Videos' links from the left menu when a user has zero video upload quota",
+  "author": "Your Name",
+  "license": "AGPL-3.0",
+  "main": "main.js",
+  "scripts": {
+    "build": "node ./scripts/build.js"
+  },
+  "clientScripts": [
+    {
+      "script": "client/dist/common-client-plugin.js",
+      "scopes": ["common"]
     }
+  ],
+  "engine": {
+    "peertube": ">=5.0.0"
   }
 }
