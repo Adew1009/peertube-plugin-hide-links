@@ -2,7 +2,7 @@
   "name": "peertube-plugin-hide-links",
   "description": "Hide 'Channels' and 'Videos' links from the left menu when a user has zero video upload quota",
   "version": "1.0.0",
-  "author": "Your Name",
+  "author": "Mike Canzoneri",
   "license": "AGPL-3.0",
   "main": "main.js",
   "peertube": {
