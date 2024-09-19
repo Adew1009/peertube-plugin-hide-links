@@ -31,4 +31,5 @@ async function register ({ registerHook, peertubeHelpers }) {
   });
 }
 
-// No export statement needed
+// Attach the register function to the window object to make it globally accessible
+window.register = register;
