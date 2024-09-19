@@ -1,13 +1,15 @@
-async function register ({ registerHook, peertubeHelpers }) {
+// This function will be called by PeerTube to register the plugin
+async function register({ registerHook, peertubeHelpers }) {
   console.log("Plugin loaded and running");
 
-  async function fetchUserQuota () {
+  // Fetch user quota asynchronously
+  async function fetchUserQuota() {
     try {
-      const user = await fetch('/api/v1/users/me', {
+      const response = await fetch('/api/v1/users/me', {
         method: 'GET',
-        headers: peertubeHelpers.getAuthHeader()
+        headers: peertubeHelpers.getAuthHeader(),
       });
-      const userData = await user.json();
+      const userData = await response.json();
       console.log('User data fetched:', userData);
       return userData.videoQuota || 0;
     } catch (error) {
@@ -16,19 +18,29 @@ async function register ({ registerHook, peertubeHelpers }) {
     }
   }
 
+  // Register the left-menu filter hook
   registerHook({
     target: 'filter:left-menu.links.create.result',
-    handler: async (result) => {
+    handler: async (menuLinks) => {
       console.log('Left menu links are being filtered...');
+
+      // Fetch the user quota
       const userQuota = await fetchUserQuota();
       console.log('User quota:', userQuota);
+
+      // If the user's upload quota is zero, filter out "Channels" and "Videos" links
       if (userQuota === 0) {
         console.log('Removing Channels and Videos links...');
-        return result.filter(link => !['Channels', 'Videos'].includes(link.key));
+        return menuLinks.filter(link => link.name !== 'channels' && link.name !== 'videos');
       }
-      return result;
+
+      // Return the unmodified menu links if quota is not zero
+      return menuLinks;
     }
   });
 }
 
-export { register };
+// Ensure the register function is globally available
+if (typeof window !== 'undefined') {
+  window.register = register;
+}
