@@ -1,14 +1,13 @@
-// Immediately expose the function
-window.register = async function ({ registerHook, peertubeHelpers }) {
+async function register ({ registerHook, peertubeHelpers }) {
   console.log("Plugin loaded and running");
 
-  async function fetchUserQuota() {
+  async function fetchUserQuota () {
     try {
-      const response = await fetch('/api/v1/users/me', {
+      const user = await fetch('/api/v1/users/me', {
         method: 'GET',
-        headers: peertubeHelpers.getAuthHeader(),
+        headers: peertubeHelpers.getAuthHeader()
       });
-      const userData = await response.json();
+      const userData = await user.json();
       console.log('User data fetched:', userData);
       return userData.videoQuota || 0;
     } catch (error) {
@@ -30,4 +29,6 @@ window.register = async function ({ registerHook, peertubeHelpers }) {
       return result;
     }
   });
-};
+}
+
+export { register };
