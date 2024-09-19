@@ -4,7 +4,9 @@
   "description": "Hide 'Channels' and 'Videos' links from the left menu when a user has zero video upload quota",
   "author": "Your Name",
   "license": "AGPL-3.0",
-  "main": "main.js",
+  "bugs": "https://github.com/armanet-labs/peertube-plugin-hide-links/issues",
+  "homepage": "https://github.com/armanet-labs/peertube-plugin-hide-links",
+  "library": "main.js",
   "scripts": {
     "build": "node ./scripts/build.js"
   },
