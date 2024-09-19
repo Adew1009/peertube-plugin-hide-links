@@ -1,12 +1,21 @@
-async function register({ registerHook }) {
-  // Nothing to do on server side for this plugin.
+async function register ({
+  registerHook,
+  registerSetting,
+  settingsManager,
+  storageManager,
+  videoCategoryManager,
+  videoLicenceManager,
+  videoLanguageManager
+}) {
+
 }
 
-async function unregister() {
-  return;
+async function unregister () {
+  return
 }
 
 module.exports = {
   register,
   unregister
-};
+}
+
