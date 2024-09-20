@@ -1,11 +1,5 @@
 async function register ({
   registerHook,
-  registerSetting,
-  settingsManager,
-  storageManager,
-  videoCategoryManager,
-  videoLicenceManager,
-  videoLanguageManager
 }) {
 
 }

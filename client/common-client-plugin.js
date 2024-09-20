@@ -27,7 +27,8 @@ async function register ({ registerHook, peertubeHelpers }) {
         return result.filter(link => !['Channels', 'Videos'].includes(link.key));
       }
       return result;
-    }
+    },
+    priority: 10
   });
 }
 
