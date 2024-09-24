@@ -4,19 +4,39 @@
   "description": "Hide 'Channels' and 'Videos' links from the left menu when a user has zero video upload quota",
   "author": "Your Name",
   "license": "AGPL-3.0",
+      These fields provide essential metadata about the plugin:
+        Name and version identify the plugin uniquely.
+        Description explains what the plugin does.
+        Author field shows who created the plugin.
+        License indicates the open-source license under which the plugin is released.
   "bugs": "https://github.com/armanet-labs/peertube-plugin-hide-links/issues",
   "homepage": "https://github.com/armanet-labs/peertube-plugin-hide-links",
+      These fields provide links for reporting bugs and accessing the plugin's homepage.
   "library": "main.js",
   "scripts": {
     "build": "node ./scripts/build.js"
   },
+      This defines a build script that runs node ./scripts/build.js when needed.
   "clientScripts": [
     {
       "script": "client/common-client-plugin.js",
       "scopes": ["common"]
     }
   ],
+    This array lists client-side scripts associated with the plugin:
+      It references a file named "common-client-plugin.js" located in the "client" folder.
+      The script is scoped to the "common" area, suggesting it's meant to be shared across various contexts.
   "engine": {
     "peertube": ">=5.0.0"
+    This specifies the minimum required version of PeerTube that this plugin is compatible with. It requires PeerTube version 5.0.0 or higher.
   }
 }
+Purpose and Functionality
+This plugin is designed to hide the "Channels" and "Videos" links from the left menu in PeerTube when a user has zero video upload quota. This functionality serves several purposes:
+
+Resource Management: It prevents users who have reached their quota limit from attempting to create channels or videos.
+Abuse Prevention: It helps maintain the integrity of the platform by limiting access to certain features based on usage rights.
+User Experience: It provides clear feedback to users about their account status regarding video uploads.
+Open Source: Being licensed under AGPL-3.0, it promotes transparency and community involvement in the development and maintenance of the plugin.
+Version Compatibility: By specifying the minimum required PeerTube version, the author ensures that the plugin remains compatible with future updates of the platform.
+This plugin demonstrates good practices in plugin development for PeerTube, including proper documentation, version control, and consideration of both server-side and client-side requirements.
