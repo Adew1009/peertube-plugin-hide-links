@@ -9,3 +9,20 @@
     "versions": ">=4.0.0"
   }
 }
+
+"name": Specifies the name of the package, which is "peertube-plugin-hide-links".
+"description": Provides a brief explanation of what the plugin does. In this case, it hides certain links from the left menu under specific conditions.
+"version": Indicates the version of the plugin, set to "1.0.0". This is typically incremented when the plugin is updated.
+"author": Shows who created the plugin, Mike Canzoneri.
+"license": Specifies the license under which the plugin is released. AGPL-3.0 stands for the GNU Affero General Public License version 3.0.
+"main": Points to the main entry file of the plugin, which is "main.js".
+"peertube": This object contains PeerTube-specific metadata:
+"versions": Specifies the minimum required version of PeerTube that this plugin is compatible with. It requires PeerTube version 4.0.0 or higher.
+Purpose and Functionality
+This plugin is designed to modify the left menu in PeerTube based on the user's video upload quota. Specifically:
+
+When a user has zero video upload quota, it hides the "Channels" and "Videos" links from the left menu.
+This functionality is likely implemented to prevent users who have reached their quota limit from attempting to create channels or videos.
+The plugin uses the AGPL-3.0 license, which means it's open-source software that allows users to run, study, share, and modify the source code under certain conditions.
+By specifying the minimum required PeerTube version, the author ensures compatibility with recent versions of the platform.
+This type of plugin is useful for managing resource allocation and preventing abuse on the PeerTube platform, especially in scenarios where users might try to circumvent quota limits.
